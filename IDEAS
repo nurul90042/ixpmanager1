@@ -1,0 +1,84 @@
+
+Potential Todo / Feature Ideas
+------------------------------
+
+* IP address state (history and reserved) - see #274
+
+* API - "another thing that could potentially be useful.. the way you
+  generate RIR objects.. if members could generate their macro and maybe
+  import/exports based on the data route servers receive this could be
+  useful.. especially keeping import/exports up to date with a lot of
+  peering is a major pain.."
+
+* "the peer2peer stats page does not scale well for networks with many peers.
+  I think it could be an idea to make it configurable if you want the
+  actual graphs or just a list where you can select which graphs you would
+  like to see in one view"
+
+* <nick-2128> you know what would be incredibly useful? an ixpmanager.php
+  file which bleated about whether the correct modules are installed or not
+
+* Review MRTG script for reseller and fanout ports
+
+* INEX require that members peer "with at least the greater of 4 other
+  Members, or 10% of other Members". A tool to list members failing this
+  requirement would be useful.
+
+* Member audit - port states, errors / discards, route collector session
+  status, route server session status, etc.
+
+* Member health report
+
+* Allow member to modify template that Request Peering email is populated
+  with when sending invite using "Peering Manager". Ideally there could be a
+  list of predefined variables available that could be used while templating
+  email (ie. peer name, peer ASN, own name, own ASN, own WWW, common peering
+  LAN IPs, AS MACRO, peering email, NOC email and so on), so member could
+  create own template using above variables + own text.
+
+  Also consider adding maxprefixes to peering manager template (see #174).
+
+
+* Update suggested prefix limit / real prefix limit based on IRRDB entries?
+
+* Add ASN to graph titles
+
+* Multiple P2P graphs for LAG ports
+
+* "hose that you have bilateral peerings with is the difference between the
+  'Peers' tab and the 'Potential Bilateral Peers' tab. But I'll add a note
+  to add a tab that also shows this."
+
+
+* Maintenance Announcements / Diary  -was issue #30.
+  * Page for upcoming scheduled maintenance
+  * Select affected switches and generate a list of affected members (Name,
+    ASN, IPv4, IPv6 addresses)
+  * Add notification when members login, especially affected members, link
+    to maintenance pages.
+
+* Per location member statistics graphs to show all member traffic is a
+  specific location - see issue #204
+
+* An annual (or more frequent?) email to members reminding them of their
+  subscriptions. Also email to custadmins reminding them of their users.
+  Probably staggered over the year to prevent a flux of inbound emails.
+
+* Single page view of all notes for a customer: https://github.com/inex/IXP-Manager/issues/273
+
+* Billing details reorg - https://github.com/inex/IXP-Manager/issues/476
+
+* Route Servers - PeeringDB never via route server
+  * Never via route servers - https://github.com/inex/IXP-Manager/issues/610
+  * BFD - https://github.com/inex/IXP-Manager/issues/351
+  * Prefix aggregation - https://github.com/inex/IXP-Manager/issues/281
+  * Update templates to use bgp_path.last instead of last_nonaggregated - https://github.com/inex/IXP-Manager/pull/692
+
+
+* Patch Panel Updates:
+    * Link port provisioning with patch panel information - https://github.com/inex/IXP-Manager/issues/660
+    * Moving existing port doesn't update patch panel port record - https://github.com/inex/IXP-Manager/issues/661
+    * Customer views shows MMR ODF with cabinet position for patch-panel demarc - https://github.com/inex/IXP-Manager/issues/535
+
+*  Querying the signal level in optical modules - https://github.com/inex/IXP-Manager/issues/465
+

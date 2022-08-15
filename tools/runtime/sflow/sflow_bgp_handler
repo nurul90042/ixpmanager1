@@ -1,0 +1,43 @@
+#!/bin/sh
+
+# Copyright (C) 2009 - 2019 Internet Neutral Exchange Association Company Limited By Guarantee.
+# All Rights Reserved.
+#
+# This file is part of IXP Manager.
+#
+# IXP Manager is free software: you can redistribute it and/or modify it
+# under the terms of the GNU General Public License as published by the Free
+# Software Foundation, version v2.0 of the License.
+#
+# IXP Manager is distributed in the hope that it will be useful, but WITHOUT
+# ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+# FITNESS FOR A PARTICULAR PURPOSE.  See the GpNU General Public License for
+# more details.
+#
+# You should have received a copy of the GNU General Public License v2.0
+# along with IXP Manager.  If not, see:
+#
+# http://www.gnu.org/licenses/gpl-2.0.html
+
+# PROVIDE: sflow_bgp_handler
+# REQUIRE: DAEMON
+
+# Add the following line to /etc/rc.conf to enable sflow_bgp_handler:
+# sflow_bgp_handler_enable="YES"
+# sflow_bgp_handler_flags="<set as needed>"
+
+. /etc/rc.subr
+
+name="sflow_bgp_handler"
+rcvar=sflow_bgp_handler_enable
+command="/usr/local/bin/sflow-detect-ixp-bgp-sessions"
+
+load_rc_config $name
+# Set defaults
+: ${sflow_bgp_handler_enable="NO"}
+: ${sflow_bgp_handler_pidfile="/var/run/${name}.pid"}
+
+start_cmd="/usr/sbin/daemon -f -p ${sflow_bgp_handler_pidfile} ${command} ${sflow_bgp_handler_flags}"
+start_postcmd="echo Starting ${name}."
+
+run_rc_command "$1"

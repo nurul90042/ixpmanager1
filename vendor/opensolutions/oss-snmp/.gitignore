@@ -1,0 +1,9 @@
+.buildpath
+.idea/
+.project
+.settings/
+*~
+*.DS_Store
+doc/phpdoc-cache-*
+*~
+vendor/

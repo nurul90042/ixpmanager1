@@ -1,0 +1,19 @@
+{
+	"name": "opensolutions/oss-snmp",
+	"description": "A PHP SNMP library for people who hate SNMP, MIBs and OIDs!",
+	"keywords": ["oss", "opensolutions", "snmp", "oss_snmp", "oss-snmp"],
+	"license": "BSD-3-Clause",
+        "require": {
+        	"php": ">=5.4.0"
+	},
+	"require-dev": {
+		"phpunit/phpunit": "6.1.*"
+	},
+	"autoload": {
+		"psr-0": {
+			"OSS_SNMP": "src/",
+			"Tests": "tests/"
+		}
+	},
+	"minimum-stability": "dev"
+}

@@ -1,0 +1,136 @@
+{
+    "name": "inex/ixp-manager",
+    "description": "An application by INEX to manage Internet Exchange Points (IXPs) - https://www.ixpmanager.org/",
+    "type": "project",
+    "keywords": ["ixp manager", "ixpm", "inex", "ixp"],
+    "homepage": "https://github.com/inex/IXP-Manager/wiki",
+    "license": "GPL-2.0",
+    "authors": [
+        {
+            "name": "Barry O'Donovan",
+            "email": "barry.odonovan@inex.ie",
+            "homepage": "https://www.ixpmanager.org/"
+        },
+        {
+            "name": "Nick Hilliard",
+            "email": "nick@inex.ie",
+            "homepage": "https://www.ixpmanager.org/"
+        }
+    ],
+    "repositories":[
+        {
+            "type": "vcs",
+            "url": "git@github.com:barryo/Purifier.git"
+        }
+    ],
+    "require": {
+        "php": "^8.0",
+        "ext-json": "*",
+
+        "opensolutions/oss-snmp": "^1.0",
+
+        "fideloper/proxy": "^4.4",
+        "fruitcake/laravel-cors": "^2.0",
+        "laravel/framework": "^8.12",
+        "laravel/tinker": "^2.5",
+        "foil/foil": "^0.6.7",
+
+        "zendesk/zendesk_api_client_php": "2.2.10",
+        "guzzlehttp/guzzle": "^7.0.1",
+        "intervention/image": "^2.3",
+        "anahkiasen/former": "^4.6",
+        "barryvdh/laravel-dompdf": "^0.9.0",
+        "mews/purifier": "^3.2",
+        "php-ds/php-ds": "^1.1",
+        "s1lentium/iptools": "^1.1",
+        "parsedown/laravel": "^1.2.1",
+        "webpatser/laravel-countries": "^1.5.4",
+        "laravel/telescope": "^4.4.4",
+        "laravel/horizon": "^5.7",
+        "socialiteproviders/manager": "^4",
+        "pragmarx/google2fa-laravel": "^1.4.1",
+        "bacon/bacon-qr-code": "^2.0.3",
+        "wolfcast/browser-detection": "^2.9.5",
+        "laravel/ui": "^3.0",
+        "doctrine/dbal": "^3.0"
+    },
+    "require-dev": {
+        "facade/ignition": "^2.5",
+        "fakerphp/faker": "^1.9.1",
+        "laravel/sail": "^1.0.1",
+        "beyondcode/laravel-dump-server": "^1.7",
+        "phpunit/phpunit": "^9.3.3",
+        "mockery/mockery": "^1.4.2",
+        "barryvdh/laravel-ide-helper": "^2.9",
+        "laravel/dusk": "^6.13.0",
+        "nunomaduro/collision": "^5.0",
+        "staudenmeir/dusk-updater": "^1.2.2",
+        "barryvdh/laravel-debugbar": "^3.5.2",
+        "vimeo/psalm": "^4.7",
+        "psalm/plugin-laravel": "^1.4"
+     },
+    "support": {
+        "issues": "https://www.ixpmanager.org/support.php",
+        "forum": "https://www.inex.ie/mailman/listinfo/ixpmanager",
+        "docs": "http://docs.ixpmanager.org/",
+        "source": "https://github.com/inex/IXP-Manager"
+    },
+    "autoload": {
+        "psr-4": {
+            "IXP\\": "app/",
+            "Database\\Seeders\\": "database/seeders/",
+            "Database\\": "database",
+             "SocialiteProviders\\PeeringDB\\": "data/SocialiteProviders/PeeringDB/"
+       },
+        "files": [
+            "app/Support/helpers.php"
+        ]
+     },
+     "autoload-dev": {
+         "classmap": [
+             "tests/TestCase.php"
+         ],
+         "psr-4": {
+             "Tests\\": "tests/"
+         }
+    },
+    "extra": {
+        "laravel": {
+            "dont-discover": []
+        }
+    },
+    "scripts": {
+        "post-root-package-install": [
+            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+        ],
+        "post-create-project-cmd": [
+            "@php artisan key:generate"
+        ],
+        "post-autoload-dump": [
+            "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
+            "@php artisan package:discover"
+        ],
+
+        "post-install-cmd": [
+            "@php artisan clear-compiled"
+        ],
+
+        "post-update-cmd": [
+            "@php artisan clear-compiled",
+            "Illuminate\\Foundation\\ComposerScripts::postUpdate",
+            "@php artisan ide-helper:generate",
+            "@php artisan ide-helper:meta --filename=.phpstorm.meta.php/laravel.meta.php",
+            "@php artisan ide-helper:models -Wr",
+            "@php artisan telescope:publish",
+            "@php artisan horizon:install"
+        ]
+    },
+    "config": {
+        "config": {
+            "optimize-autoloader": true,
+            "preferred-install": "dist",
+            "sort-packages": true
+        }
+   },
+   "minimum-stability": "stable"
+}

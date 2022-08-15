@@ -1,0 +1,433 @@
+/**
+ * This injects Tailwind's base styles, which is a combination of
+ * Normalize.css and some additional base styles.
+ *
+ * You can see the styles here:
+ * https://github.com/tailwindcss/tailwindcss/blob/master/css/preflight.css
+ *
+ * If using `postcss-import`, use this import instead:
+ *
+ * @import "tailwindcss/preflight";
+ */
+@tailwind base;
+
+/**
+ * This injects any component classes registered by plugins.
+ *
+ * If using `postcss-import`, use this import instead:
+ *
+ * @import "tailwindcss/components";
+ */
+@tailwind components;
+
+/**
+ * Here you would add any of your custom component classes; stuff that you'd
+ * want loaded *before* the utilities so that the utilities could still
+ * override them.
+ *
+ * Example:
+ *
+ * .btn { ... }
+ * .form-input { ... }
+ *
+ * Or if using a preprocessor or `postcss-import`:
+ *
+ * @import "components/buttons";
+ * @import "components/forms";
+ */
+
+
+/****************************************************************************************
+ **** Reset headings to ~ Bootstrap4 defaults
+ ****************************************************************************************/
+
+h1 {
+  font-size: 2.4rem;
+  line-height: 1;
+  color: #1a202c;
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: .5rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+h3 {
+  font-size: 1.75rem;
+  margin-bottom: .5rem;
+  font-weight: 300;
+  line-height: 1.2;
+  color:#1a202c;
+}
+
+h4 {
+  font-size: 1.5rem;
+  margin-bottom: .5rem;
+  font-weight: 300;
+  color:#1a202c;
+  line-height:1;
+}
+
+h5 {
+  font-size: 1.25rem;
+  margin-bottom: .5rem;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+h6 {
+  font-size: 1rem;
+  margin-bottom: .5rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+
+p {
+  margin-bottom: 1rem;
+}
+
+li {
+  display: list-item;
+}
+
+ol {
+  display: block;
+  list-style-type: decimal;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 40px;
+}
+
+ul {
+  display: block;
+  list-style-type: disc;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 40px;
+}
+
+dl {
+  display: block;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+dt {
+  display: block;
+}
+
+code {
+  font-size: 0.9em;
+}
+
+pre {
+  display: block;
+  font-family: monospace;
+  white-space: pre;
+  margin: 1em 0;
+  font-size: 0.9em;
+}
+
+hr {
+    margin-bottom: 10px;
+}
+
+/****************************************************************************************
+ **** Reset anchors
+ ****************************************************************************************/
+
+a {
+  @apply tw-text-blue-500;
+}
+
+a:hover {
+  @apply tw-underline;
+}
+
+.tw-border-t-1{
+    border-top-width: 1px;
+}
+
+.tw-border-b-1{
+    border-bottom-width: 1px;
+}
+
+.tw-border-1{
+    border-width: 1px;
+}
+
+.shadow{
+    --tw-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+/****************************************************************************************
+ **** LHS Menu in IXP Manager
+
+
+        <div class="tw-bg-white tw-shadow tw-w-64 tw-my-2">
+            <ul class="list-reset">
+                <li >
+                    <a href="#" class="tw-block tw-p-4 tw-text-grey-darker tw-font-bold tw-border-purple hover:tw-bg-grey-lighter tw-border-r-4">Home</a>
+                </li>
+                <li >
+                    <a href="#" class="tw-block tw-p-4 tw-text-grey-darker tw-font-bold tw-border-grey-lighter hover:tw-border-purple-light hover:tw-bg-grey-lighter tw-border-r-4">About us</a>
+                </li>
+            </ul>
+        </div>
+
+
+ ****************************************************************************************/
+
+
+#side-navbar {
+  @apply shadow tw-pr-0 tw-bg-white;
+}
+
+#side-navbar ul, #side-navbar ol {
+   list-style: none;
+   margin: 0;
+   padding: 0;
+}
+
+#side-navbar h6 {
+  @apply tw-block tw-p-4 tw-pl-1 tw-text-grey-darker tw-border-grey-lighter tw-border-r-4 tw-m-0;
+}
+
+.nav-link {
+  @apply tw-block tw-p-2 tw-pl-3 tw-text-grey-darker tw-no-underline tw-text-sm;
+}
+
+.nav-link:hover {
+  @apply tw-text-grey-darker;
+}
+
+#side-navbar li {
+  @apply tw-block tw-p-0 tw-text-grey-darker tw-border-grey-lighter tw-border-r-4 tw-font-medium;
+}
+
+#side-navbar li.active {
+  @apply tw-border-green-600 tw-bg-grey-lighter tw-font-bold;
+  font-weight: 700 !important;
+}
+
+#side-navbar li:hover {
+  @apply tw-border-green-600 tw-bg-grey-lighter tw-text-grey-darker;
+}
+
+.nav-sub-menu-item {
+  @apply tw-ml-8;
+}
+
+
+.ixpm-table a {
+  @apply tw-text-blue-dark tw-no-underline;
+}
+
+.ixpm-table a:hover {
+  @apply tw-text-blue-500 tw-underline;
+}
+
+
+/****************************************************************************************
+ **** Buttons
+ ****************************************************************************************/
+
+.btn {
+    @apply tw-font-bold tw-rounded-sm tw-border-transparent;
+}
+
+.btn:hover {
+    @apply tw-border-transparent;
+}
+
+.btn-primary {
+    @apply tw-bg-blue-500 tw-text-white tw-font-bold;
+}
+
+.btn-primary:hover {
+    @apply tw-bg-blue-dark;
+}
+
+.btn-success {
+    @apply tw-bg-green-500 tw-text-white tw-font-bold;
+}
+
+.btn-success:hover {
+    @apply tw-bg-green-dark;
+}
+
+.btn-secondary {
+    @apply tw-bg-grey-dark tw-text-white tw-font-bold;
+}
+
+.btn-secondary:hover {
+    @apply tw-bg-grey-darker;
+}
+
+.btn-outline-secondary{
+    @apply tw-bg-transparent tw-text-grey tw-font-semibold tw-border-1 tw-border-grey tw-rounded-sm
+}
+
+.btn-outline-secondary:hover{
+    @apply tw-bg-grey;
+}
+
+.btn-white{
+    @apply tw-bg-white tw-text-grey-darkest tw-font-semibold tw-border-1 tw-border-grey-light tw-rounded-sm shadow;
+}
+
+.btn-white:hover{
+    @apply tw-bg-grey-lighter tw-border-1 tw-border-grey-light;
+}
+
+.btn-info{
+    @apply tw-bg-white tw-text-teal-500 tw-font-semibold tw-border-1 tw-border-teal-500 tw-rounded-sm shadow;
+}
+
+.btn-info:hover{
+    @apply tw-bg-teal-500 tw-border-1 tw-border-grey-light;
+}
+
+/****************************************************************************************ea
+ **** Inputs
+ ****************************************************************************************/
+
+input.form-control{
+    @apply shadow tw-appearance-none tw-border-1 tw-rounded-sm tw-w-full tw-py-2 tw-px-4 tw-text-grey-darker tw-leading-tight;
+}
+
+input.form-control:focus{
+    @apply tw-outline-none tw-shadow-outline tw-text-grey-darker tw-leading-tight;
+}
+
+.input-group-append .btn{
+    @apply shadow; border-color : #ced4da;
+}
+
+label.control-label, label.form-check-label{
+    @apply tw-block tw-text-grey-darker tw-text-sm tw-font-bold;
+}
+
+
+
+/****************************************************************************************
+ **** Badge
+ ****************************************************************************************/
+
+.badge{
+   @apply tw-text-white tw-font-bold tw-py-1 tw-px-3 tw-rounded-full
+}
+
+.badge-info{
+    @apply tw-bg-teal-500;
+}
+
+.badge-success{
+    @apply tw-bg-green-500;
+}
+
+.badge-secondary{
+    @apply tw-bg-grey;
+}
+
+.badge-warning{
+    @apply tw-text-black tw-bg-orange-400;
+}
+
+/****************************************************************************************
+ **** Card
+ ****************************************************************************************/
+
+.card{
+    border-color : #dae1e7;
+    @apply shadow tw-rounded-sm;
+ }
+
+ .card .card-header{
+    @apply tw-rounded-tl-sm tw-rounded-tr-sm tw-border-b-0;
+ }
+
+
+a{
+    @apply tw-inline-block tw-align-baseline tw-font-bold tw-text-blue-light;
+}
+
+a:hover{
+    @apply tw-no-underline tw-text-blue-dark;
+}
+
+/****************************************************************************************
+ **** table
+ ****************************************************************************************/
+
+.table-light td, .table-light thead th{
+    border-color : #ced4da;
+}
+
+
+/****************************************************************************************
+ **** Docstore
+ ****************************************************************************************/
+
+.docstore table {
+    @apply tw-table-auto tw-w-full;
+}
+
+.docstore td {
+    @apply tw-border-t-1 tw-border-gray-300 tw-px-2 tw-py-2;
+}
+
+.docstore td.top {
+  @apply tw-border-t-2 tw-border-gray-300 tw-px-2 tw-py-2;
+}
+
+.docstore td.meta {
+    @apply tw-whitespace-nowrap tw-w-1 tw-hidden;
+}
+
+@screen lg {
+  .docstore td.meta {
+    @apply tw-whitespace-nowrap tw-w-1 tw-table-cell;
+  }
+}
+
+.docstore td.icon {
+  @apply tw-text-center tw-whitespace-nowrap tw-w-1 tw-px-2 tw-py-2 tw-mr-4;
+}
+
+/**
+ * This injects all of Tailwind's utility classes, generated based on your
+ * config file.
+ *
+ * If using `postcss-import`, use this import instead:
+ *
+ * @import "tailwindcss/utilities";
+ */
+@tailwind utilities;
+
+/**
+ * Here you would add any custom utilities you need that don't come out of the
+ * box with Tailwind.
+ *
+ * Example :
+ *
+ * .bg-pattern-graph-paper { ... }
+ * .skew-45 { ... }
+ *
+ * Or if using a preprocessor or `postcss-import`:
+ *
+ * @import "utilities/background-patterns";
+ * @import "utilities/skew-transforms";
+ */
