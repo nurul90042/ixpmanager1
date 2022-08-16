@@ -81,13 +81,15 @@ use PragmaRX\Google2FALaravel\Support\Authenticator as GoogleAuthenticator;
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <?php if( is_numeric( config( 'grapher.access.ixp' ) ) && config( 'grapher.access.ixp' ) <= Auth::getUser()->privs() ): ?>
                         <a class="dropdown-item <?= !request()->is( 'statistics/ixp*' ) ?: 'active' ?>" href="<?= route( 'statistics@ixp' ) ?>">
-                            Overall Peering Graphs
+                        XXXXXX    
+                        <!-- Overall Peering Graphs -->
                         </a>
                     <?php endif; ?>
 
                     <?php if( is_numeric( config( 'grapher.access.infrastructure' ) ) && config( 'grapher.access.infrastructure' )  <= Auth::getUser()->privs() ): ?>
                         <a class="dropdown-item <?= !request()->is( 'statistics/infrastructure*' ) ?: 'active' ?>" href="<?= route( 'statistics@infrastructure' ) ?>">
-                            Infrastructure Graphs
+                        XXXXXX WOY   
+                        <!-- Infrastructure Graphs -->
                         </a>
                     <?php endif; ?>
 
