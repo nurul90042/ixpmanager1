@@ -1,5 +1,8 @@
 ![IXP Manager Logo](https://github.com/inex/IXP-Manager/raw/master/public/images/ixp-manager.png)
 
+
+![xxArtboard 1 copy 12@3x](https://user-images.githubusercontent.com/65795036/184818457-e137ac9a-aa1e-4c1b-a7fb-c24133fe3933.png)
+
 [INEX](https://www.inex.ie/) are pleased to release [IXP Manager](http://www.ixpmanager.org/) under an open source license (the
 GNU Public License V2) which we hope will benefit the wider IXP community,
 and especially new and small IXPs looking to expand.
